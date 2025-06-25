@@ -47,7 +47,7 @@ const VehicleCard = ({ name, price, image, year, mileage, fuelType, seats, type 
         
         <div className="flex justify-between items-center mb-4">
           <div className="text-2xl font-bold text-orange-500">
-            ${price.toLocaleString()}
+            रु{price.toLocaleString()}
             {type === 'rent' && <span className="text-sm text-gray-500">/day</span>}
           </div>
         </div>
