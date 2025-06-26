@@ -13,15 +13,15 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>+1 (555) 123-4567</span>
+              <span>+977 9814345347</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>info@autotrader.com</span>
+              <span>rent3669@gmail.com</span>
             </div>
           </div>
           <div className="text-sm">
-            Open 24/7 - Best Deals Guaranteed!
+            Open 12/6 - Best Deals Guaranteed!
           </div>
         </div>
       </div>

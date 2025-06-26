@@ -11,15 +11,15 @@ const Hero = () => {
       <div className="relative container mx-auto px-4 text-center text-white">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
           Want to{' '}
-          <span className="text-orange-500">Buy</span>
-          {' '}or{' '}
+          {/* <span className="text-orange-500">Buy</span> */}
+          {/* {' '}or{' '} */}
           <span className="text-orange-500">Rent</span>
           <br />
-          a Car?
+          a vechicle?
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
-          Your Trusted Partner for Quality Used Cars
+          Your Trusted Partner for vehicle rent.
         </p>
 
         {/* Search Form */}
@@ -34,10 +34,10 @@ const Hero = () => {
                     <SelectValue placeholder="Select location" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="new-york">New York</SelectItem>
-                    <SelectItem value="los-angeles">Los Angeles</SelectItem>
-                    <SelectItem value="chicago">Chicago</SelectItem>
-                    <SelectItem value="houston">Houston</SelectItem>
+                    <SelectItem value="Dharan">dharan</SelectItem>
+                    <SelectItem value="Biratnagar">Biratnagar</SelectItem>
+                    <SelectItem value="Pokhara">Pokhara</SelectItem>
+                    <SelectItem value="kathamandu">kathamandu</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -65,10 +65,10 @@ const Hero = () => {
                   <SelectValue placeholder="Select budget" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="0-20k">$0 - $20,000</SelectItem>
-                  <SelectItem value="20k-40k">$20,000 - $40,000</SelectItem>
-                  <SelectItem value="40k-60k">$40,000 - $60,000</SelectItem>
-                  <SelectItem value="60k+">$60,000+</SelectItem>
+                  <SelectItem value="0-5k">रु0 - रु5,000</SelectItem>
+                  <SelectItem value="10-30k">रु10,000 - रु30,000</SelectItem>
+                  <SelectItem value="30k-60k">रु30,000 - रु60,000</SelectItem>
+                  <SelectItem value="60k+">रु60,000+</SelectItem>
                 </SelectContent>
               </Select>
             </div>

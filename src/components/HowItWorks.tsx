@@ -20,8 +20,8 @@ const HowItWorks = () => {
     },
     {
       icon: <Key className="w-12 h-12 text-orange-500" />,
-      title: "Drive",
-      description: "Complete the paperwork and drive away in your new car today!"
+      title: "Drive Away",
+      description: "Complete the paperwork and drive away to your destination today!"
     }
   ];
 
@@ -33,7 +33,7 @@ const HowItWorks = () => {
             HOW IT <span className="text-orange-500">WORKS</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Getting your dream car has never been easier. Follow these simple steps.
+            Getting your vehicle has never been easier. Follow these simple steps.
           </p>
         </div>
 

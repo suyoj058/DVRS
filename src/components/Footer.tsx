@@ -38,8 +38,6 @@ const Footer = () => {
               <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">About Us</a></li>
               <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Our Services</a></li>
               <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Vehicle Inventory</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Financing</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Insurance</a></li>
             </ul>
           </div>
 
@@ -59,10 +57,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6">Get In Touch</h3>
             <div className="space-y-3">
-              <p className="text-gray-400">📍 123 Auto Street, New York, NY 10001</p>
-              <p className="text-gray-400">📞 +1 (555) 123-4567</p>
+              <p className="text-gray-400">📍 R79R+F85, Dantakali Path, Dharan 56700</p>
+              <p className="text-gray-400">📞 +977 9805322735</p>
+              <p className="text-gray-400">📞 +977 9822085975</p>
+              <p className="text-gray-400">📞 +977 9814345347</p>
               <p className="text-gray-400">✉️ info@autotrader.com</p>
-              <p className="text-gray-400">🕒 Open 24/7</p>
+              <p className="text-gray-400">🕒 Open 12/6</p>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 AutoTrader. All rights reserved. | Privacy Policy | Terms of Service
+            © 2025 AutoTrader. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

@@ -26,8 +26,9 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Phone</h3>
-                <p className="text-gray-300">+1 (555) 123-4567</p>
-                <p className="text-gray-300">+1 (555) 987-6543</p>
+                <p className="text-gray-300">+977 9805322735</p>
+                <p className="text-gray-300">+977 9822085975</p>
+                <p className="text-gray-300">+977 9814345347</p>
               </div>
             </div>
 
@@ -37,8 +38,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Email</h3>
-                <p className="text-gray-300">info@autotrader.com</p>
-                <p className="text-gray-300">support@autotrader.com</p>
+                <p className="text-gray-300">rent3669@gmail.com</p>
+                <p className="text-gray-300">support@rent3669.com</p>
               </div>
             </div>
 
@@ -48,8 +49,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Address</h3>
-                <p className="text-gray-300">123 Auto Street</p>
-                <p className="text-gray-300">New York, NY 10001</p>
+                <p className="text-gray-300">R79R+F85, Dantakali Path</p>
+                <p className="text-gray-300">Dharan 56700</p>
               </div>
             </div>
 
@@ -60,7 +61,7 @@ const ContactSection = () => {
               <div>
                 <h3 className="text-xl font-bold mb-2">Hours</h3>
                 <p className="text-gray-300">Monday - Friday: 8:00 AM - 8:00 PM</p>
-                <p className="text-gray-300">Saturday - Sunday: 9:00 AM - 6:00 PM</p>
+                <p className="text-gray-300">Sunday: 10:00 AM - 6:00 PM</p>
               </div>
             </div>
           </div>
