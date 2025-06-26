@@ -31,7 +31,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Car className="w-8 h-8 text-orange-500" />
-            <span className="text-2xl font-bold">AutoTrader</span>
+            <span className="text-2xl font-bold">Vehicle Rental</span>
           </div>
           
           {/* Desktop Navigation */}

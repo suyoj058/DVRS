@@ -11,7 +11,7 @@ interface VehicleCardProps {
   mileage: number;
   fuelType: string;
   seats: number;
-  type: 'rent' | 'buy';
+  type: 'rent';
 }
 
 const VehicleCard = ({ name, price, image, year, mileage, fuelType, seats, type }: VehicleCardProps) => {
@@ -30,15 +30,6 @@ const VehicleCard = ({ name, price, image, year, mileage, fuelType, seats, type 
           <button className="bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
             <Eye className="w-5 h-5 text-gray-600" />
           </button>
-        </div>
-        <div className="absolute top-4 left-4">
-          <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-            type === 'rent' 
-              ? 'bg-blue-500 text-white' 
-              : 'bg-green-500 text-white'
-          }`}>
-            For {type === 'rent' ? 'Rent' : 'Sale'}
-          </span>
         </div>
       </div>
 
@@ -73,7 +64,7 @@ const VehicleCard = ({ name, price, image, year, mileage, fuelType, seats, type 
 
         <div className="flex space-x-3">
           <Button className="flex-1 bg-orange-600 hover:bg-orange-700 text-white">
-            {type === 'rent' ? 'Rent Now' : 'Buy Now'}
+            Rent Now
           </Button>
           <Button variant="outline" className="flex-1 border-orange-600 text-orange-600 hover:bg-orange-50">
             Details

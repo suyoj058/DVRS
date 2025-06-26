@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <Car className="w-8 h-8 text-orange-500" />
-              <span className="text-2xl font-bold">AutoTrader</span>
+              <span className="text-2xl font-bold">vehicle Rental</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Your trusted partner for quality used cars. We make buying and renting vehicles simple, transparent, and affordable.
@@ -61,7 +61,7 @@ const Footer = () => {
               <p className="text-gray-400">📞 +977 9805322735</p>
               <p className="text-gray-400">📞 +977 9822085975</p>
               <p className="text-gray-400">📞 +977 9814345347</p>
-              <p className="text-gray-400">✉️ info@autotrader.com</p>
+              <p className="text-gray-400">✉️ info@vehiclerental.com</p>
               <p className="text-gray-400">🕒 Open 12/6</p>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 AutoTrader. All rights reserved. | Privacy Policy | Terms of Service
+            © 2025 VehicleRental. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

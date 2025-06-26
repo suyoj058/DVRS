@@ -7,18 +7,18 @@ const VehiclesSection = () => {
     {
       id: 1,
       name: "BMW X5 xDrive40i",
-      price: 45000,
+      price: 10000,
       image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500&h=300&fit=crop",
       year: 2021,
       mileage: 25000,
       fuelType: "Gasoline",
       seats: 7,
-      type: 'buy' as const
+      type: 'rent' as const
     },
     {
       id: 2,
       name: "Mercedes-Benz C-Class",
-      price: 150,
+      price: 15000,
       image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500&h=300&fit=crop",
       year: 2022,
       mileage: 15000,
@@ -29,18 +29,18 @@ const VehiclesSection = () => {
     {
       id: 3,
       name: "Audi A8 L",
-      price: 65000,
+      price: 6500,
       image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500&h=300&fit=crop",
       year: 2020,
       mileage: 30000,
       fuelType: "Gasoline",
       seats: 5,
-      type: 'buy' as const
+      type: 'rent' as const
     },
     {
       id: 4,
       name: "Tesla Model S",
-      price: 200,
+      price: 2000,
       image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=500&h=300&fit=crop",
       year: 2023,
       mileage: 5000,
@@ -51,21 +51,21 @@ const VehiclesSection = () => {
     {
       id: 5,
       name: "Porsche 911 Carrera",
-      price: 85000,
+      price: 8500,
       image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500&h=300&fit=crop",
       year: 2021,
       mileage: 18000,
       fuelType: "Gasoline",
       seats: 4,
-      type: 'buy' as const
+      type: 'rent' as const
     },
     {
       id: 6,
       name: "Range Rover Evoque",
-      price: 120,
+      price: 3000,
       image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&h=300&fit=crop",
       year: 2022,
-      mileage: 12000,
+      mileage: 1200,
       fuelType: "Gasoline",
       seats: 5,
       type: 'rent' as const
@@ -80,7 +80,7 @@ const VehiclesSection = () => {
             BEST <span className="text-orange-500">VEHICLES</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our hand-picked collection of premium vehicles available for purchase or rental
+            Explore our collection of vehicles available for rental
           </p>
         </div>
 
