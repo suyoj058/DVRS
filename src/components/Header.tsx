@@ -1,8 +1,11 @@
-
 import { Car, Menu, X, Phone, Mail } from 'lucide-react';
 import { useState } from 'react';
 
-const Header = () => {
+interface HeaderProps {
+  onLogout: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -41,6 +44,12 @@ const Header = () => {
             <a href="#vehicles" className="hover:text-orange-500 transition-colors">Vehicles</a>
             <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+            <button
+              onClick={onLogout}
+              className="hover:text-orange-500 transition-colors"
+            >
+              Logout
+            </button>
           </nav>
 
           {/* Mobile menu button */}
@@ -61,6 +70,12 @@ const Header = () => {
               <a href="#vehicles" className="hover:text-orange-500 transition-colors">Vehicles</a>
               <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
               <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+              <button
+                onClick={onLogout}
+                className="hover:text-orange-500 text-left transition-colors"
+              >
+                Logout
+              </button>
             </div>
           </nav>
         )}

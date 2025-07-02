@@ -1,10 +1,34 @@
-
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 const ContactSection = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        'service_c18h4kj',     // 🔁 Replace this with your EmailJS Service ID
+        'template_p0l2x34',    // 🔁 Replace this with your Template ID
+        formRef.current,
+        'e_rX-dUkoZhvvHOdP'      // 🔁 Replace this with your Public Key
+      )
+      .then(() => {
+        alert('Message sent successfully!');
+        formRef.current?.reset();
+      })
+      .catch((err) => {
+        console.error('Email send error:', err);
+        alert('Failed to send message. Please try again later.');
+      });
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
@@ -69,33 +93,42 @@ const ContactSection = () => {
           {/* Contact Form */}
           <div className="bg-gray-800 rounded-2xl p-8">
             <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-            <form className="space-y-6">
+            <form ref={formRef} onSubmit={handleSendEmail} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input 
-                  placeholder="First Name" 
+                <Input
+                  name="first_name"
+                  placeholder="First Name"
                   className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
+                  required
                 />
-                <Input 
-                  placeholder="Last Name" 
+                <Input
+                  name="last_name"
+                  placeholder="Last Name"
                   className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
+                  required
                 />
               </div>
-              <Input 
-                type="email" 
-                placeholder="Email Address" 
+              <Input
+                name="user_email"
+                type="email"
+                placeholder="Email Address"
+                className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
+                required
+              />
+              <Input
+                name="phone"
+                type="tel"
+                placeholder="Phone Number"
                 className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
               />
-              <Input 
-                type="tel" 
-                placeholder="Phone Number" 
-                className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-              />
-              <Textarea 
-                placeholder="Your Message" 
+              <Textarea
+                name="message"
+                placeholder="Your Message"
                 rows={5}
                 className="bg-gray-700 border-gray-600 text-white placeholder-gray-400"
+                required
               />
-              <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 text-lg">
+              <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3 text-lg">
                 Send Message
               </Button>
             </form>
@@ -107,3 +140,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+

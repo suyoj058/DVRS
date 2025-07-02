@@ -6,12 +6,12 @@ const HowItWorks = () => {
     {
       icon: <Search className="w-12 h-12 text-orange-500" />,
       title: "Search",
-      description: "Browse our extensive collection of quality used cars and find the perfect match for your needs."
+      description: "Browse our extensive collection of quality  vehicle and find the perfect match for your needs."
     },
     {
       icon: <CheckCircle className="w-12 h-12 text-orange-500" />,
       title: "Choose",
-      description: "Select from our verified vehicles, all inspected for quality and reliability."
+      description: "Select from our verified vehicles for quality and reliability."
     },
     {
       icon: <Car className="w-12 h-12 text-orange-500" />,

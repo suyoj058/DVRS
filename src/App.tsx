@@ -1,27 +1,30 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-const queryClient = new QueryClient();
+import LoginSignupContainer from './login_signup/LoginSignupContainer';
+import Index from './pages/Index';
+import RentNow from './pages/RentNow';
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  return (
+    <Router>
+      {!isAuthenticated ? (
+        // Show login/signup until user authenticates
+        <LoginSignupContainer onLoginSuccess={() => setIsAuthenticated(true)} />
+      ) : (
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          {/* Home page with logout */}
+          <Route path="/" element={<Index onLogout={() => setIsAuthenticated(false)} />} />
+          {/* Rent Now page */}
+          <Route path="/rent-now" element={<RentNow />} />
+          {/* Redirect any unknown routes to home */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      )}
+    </Router>
+  );
+};
 
 export default App;

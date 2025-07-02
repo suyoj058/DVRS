@@ -1,6 +1,7 @@
-
+import React from 'react';
 import { Heart, Eye, Calendar, Gauge, Fuel, Users } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'; // adjust import to your project
+import { useNavigate } from 'react-router-dom';
 
 interface VehicleCardProps {
   id: number;
@@ -14,12 +15,35 @@ interface VehicleCardProps {
   type: 'rent';
 }
 
-const VehicleCard = ({ name, price, image, year, mileage, fuelType, seats, type }: VehicleCardProps) => {
+const VehicleCard = ({
+  id,
+  name,
+  price,
+  image,
+  year,
+  mileage,
+  fuelType,
+  seats,
+  type,
+}: VehicleCardProps) => {
+  const navigate = useNavigate();
+
+  const handleRentNow = () => {
+    navigate('/rent-now', {
+      state: {
+        vehicleName: name,
+        vehicleId: id,
+        price,
+        image,
+      },
+    });
+  };
+
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
       <div className="relative">
-        <img 
-          src={image} 
+        <img
+          src={image}
           alt={name}
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
         />
@@ -35,11 +59,13 @@ const VehicleCard = ({ name, price, image, year, mileage, fuelType, seats, type 
 
       <div className="p-6">
         <h3 className="text-xl font-bold text-gray-900 mb-2">{name}</h3>
-        
+
         <div className="flex justify-between items-center mb-4">
           <div className="text-2xl font-bold text-orange-500">
             रु{price.toLocaleString()}
-            {type === 'rent' && <span className="text-sm text-gray-500">/day</span>}
+            {type === 'rent' && (
+              <span className="text-sm text-gray-500">/day</span>
+            )}
           </div>
         </div>
 
@@ -63,10 +89,17 @@ const VehicleCard = ({ name, price, image, year, mileage, fuelType, seats, type 
         </div>
 
         <div className="flex space-x-3">
-          <Button className="flex-1 bg-orange-600 hover:bg-orange-700 text-white">
+          <Button
+            onClick={handleRentNow}
+            className="flex-1 bg-orange-600 hover:bg-orange-700 text-white"
+          >
             Rent Now
           </Button>
-          <Button variant="outline" className="flex-1 border-orange-600 text-orange-600 hover:bg-orange-50">
+
+          <Button
+            variant="outline"
+            className="flex-1 border-orange-600 text-orange-600 hover:bg-orange-50"
+          >
             Details
           </Button>
         </div>

@@ -50,10 +50,10 @@ const Hero = () => {
                   <SelectValue placeholder="Select type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="sedan">Sedan</SelectItem>
-                  <SelectItem value="suv">SUV</SelectItem>
-                  <SelectItem value="sports">Sports Car</SelectItem>
-                  <SelectItem value="luxury">Luxury</SelectItem>
+                  <SelectItem value="sedan">Bike</SelectItem>
+                  <SelectItem value="suv">Car</SelectItem>
+                  <SelectItem value="sports">EV</SelectItem>
+                  <SelectItem value="luxury">Custom</SelectItem>
                 </SelectContent>
               </Select>
             </div>

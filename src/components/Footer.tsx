@@ -13,8 +13,8 @@ const Footer = () => {
               <span className="text-2xl font-bold">vehicle Rental</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Your trusted partner for quality used cars. We make buying and renting vehicles simple, transparent, and affordable.
-            </p>
+              Your trusted partner for quality vehicles. We make renting vehicles simple, transparent, and affordable.
+             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-gray-800 hover:bg-orange-500 rounded-full p-2 transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -45,10 +45,8 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6">Vehicle Types</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Sedans</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">SUVs</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Sports Cars</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Luxury Vehicles</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Bike</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Car</a></li>
               <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Electric Cars</a></li>
             </ul>
           </div>
