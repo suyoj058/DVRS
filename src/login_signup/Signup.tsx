@@ -59,9 +59,10 @@ const styles = {
 
 interface SignupProps {
   onSwitchToLogin: () => void;
+  onSignupComplete: () => void;
 }
 
-const Signup: React.FC<SignupProps> = ({ onSwitchToLogin }) => {
+const Signup: React.FC<SignupProps> = ({ onSwitchToLogin, onSignupComplete }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [contact, setContact] = useState('');
@@ -79,8 +80,8 @@ const Signup: React.FC<SignupProps> = ({ onSwitchToLogin }) => {
       password,
     });
 
-    // Redirect to login after signup
-    onSwitchToLogin();
+    // Instead of redirecting to login, show post-signup prompt
+    onSignupComplete();
   };
 
   return (
