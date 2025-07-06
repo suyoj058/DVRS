@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
-import LoginSignupContainer from './login_signup/LoginSignupContainer';
 import Index from './pages/Index';
 import RentNow from './pages/RentNow';
-import VehicleDetailsForm from './pages/VehicleDetailsForm';  // <-- import here
+import VehicleDetailsForm from './pages/VehicleDetailsForm';
+import LoginSignupContainer from './login_signup/LoginSignupContainer';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -12,19 +12,29 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {!isAuthenticated ? (
-          <Route
-            path="/*"
-            element={<LoginSignupContainer onLoginSuccess={() => setIsAuthenticated(true)} />}
-          />
-        ) : (
+        {/* ✅ Public route: Homepage */}
+        <Route path="/" element={<Index onLogout={() => setIsAuthenticated(false)} />} />
+
+        {/* ✅ Public route: Login/Signup */}
+        <Route
+          path="/login"
+          element={
+            <LoginSignupContainer
+              onLoginSuccess={() => setIsAuthenticated(true)}
+            />
+          }
+        />
+
+        {/* 🔐 Protected: Only accessible when authenticated */}
+        {isAuthenticated && (
           <>
-            <Route path="/" element={<Index onLogout={() => setIsAuthenticated(false)} />} />
             <Route path="/rent-now" element={<RentNow />} />
-            <Route path="/list-vehicle" element={<VehicleDetailsForm />} /> {/* <-- add route */}
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/list-vehicle" element={<VehicleDetailsForm />} />
           </>
         )}
+
+        {/* Redirect any unknown route to homepage */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
