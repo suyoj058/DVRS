@@ -1,31 +1,31 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import LoginSignupContainer from "./login_signup/LoginSignupContainer";
-import Index from "./pages/Index";
-import RentNow from "./pages/RentNow";
+import LoginSignupContainer from './login_signup/LoginSignupContainer';
+import Index from './pages/Index';
+import RentNow from './pages/RentNow';
+import VehicleDetailsForm from './pages/VehicleDetailsForm';  // <-- import here
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <Router>
-      {!isAuthenticated ? (
-        // Show login/signup until user authenticates
-        <LoginSignupContainer onLoginSuccess={() => setIsAuthenticated(true)} />
-      ) : (
-        <Routes>
-          {/* Home page with logout */}
+      <Routes>
+        {!isAuthenticated ? (
           <Route
-            path="/"
-            element={<Index onLogout={() => setIsAuthenticated(false)} />}
+            path="/*"
+            element={<LoginSignupContainer onLoginSuccess={() => setIsAuthenticated(true)} />}
           />
-          {/* Rent Now page */}
-          <Route path="/rent-now" element={<RentNow />} />
-          {/* Redirect any unknown routes to home */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      )}
+        ) : (
+          <>
+            <Route path="/" element={<Index onLogout={() => setIsAuthenticated(false)} />} />
+            <Route path="/rent-now" element={<RentNow />} />
+            <Route path="/list-vehicle" element={<VehicleDetailsForm />} /> {/* <-- add route */}
+            <Route path="*" element={<Navigate to="/" />} />
+          </>
+        )}
+      </Routes>
     </Router>
   );
 };
