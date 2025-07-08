@@ -72,19 +72,6 @@ const Hero = () => {
                 </SelectContent>
               </Select>
             </div>
-
-            <div className="space-y-2">
-              <label className="text-gray-700 font-semibold text-left block">Service</label>
-              <Select>
-                <SelectTrigger className="h-12">
-                  <SelectValue placeholder="Buy or Rent" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="buy">Buy</SelectItem>
-                  <SelectItem value="rent">Rent</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
           </div>
 
           <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:shadow-lg">
