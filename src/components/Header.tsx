@@ -1,5 +1,6 @@
 import { Car, Menu, X, Phone, Mail } from 'lucide-react';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';  // <-- import these
 
 interface HeaderProps {
   onLogout: () => void;
@@ -7,6 +8,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate(); // for programmatic navigation
+
+  const handleLoginSignupClick = () => {
+    navigate('/login');  // navigate to login/signup page
+  };
 
   return (
     <header className="bg-gray-900 text-white sticky top-0 z-50">
@@ -36,19 +42,21 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
             <Car className="w-8 h-8 text-orange-500" />
             <span className="text-2xl font-bold">Vehicle Rental</span>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="hover:text-orange-500 transition-colors">Home</a>
+            <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
             <a href="#how-it-works" className="hover:text-orange-500 transition-colors">How It Works</a>
             <a href="#vehicles" className="hover:text-orange-500 transition-colors">Vehicles</a>
             <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+
             <button
-              onClick={onLogout}
+              onClick={handleLoginSignupClick}
               className="hover:text-orange-500 transition-colors"
+              type="button"
             >
-              Logout
+              Login/Signup
             </button>
           </nav>
 
@@ -65,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-700 pt-4">
             <div className="flex flex-col space-y-4">
-              <a href="#home" className="hover:text-orange-500 transition-colors">Home</a>
+              <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
               <a href="#how-it-works" className="hover:text-orange-500 transition-colors">How It Works</a>
               <a href="#vehicles" className="hover:text-orange-500 transition-colors">Vehicles</a>
               <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
@@ -73,6 +81,7 @@ const Header: React.FC<HeaderProps> = ({ onLogout }) => {
               <button
                 onClick={onLogout}
                 className="hover:text-orange-500 text-left transition-colors"
+                type="button"
               >
                 Logout
               </button>
